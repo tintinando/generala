@@ -37,7 +37,7 @@ export default class Generala {
     }
   }
 
-  newGame() {
+  resetBoard() {
     this.status.board = [
       { value: 1, freeze: false },
       { value: 2, freeze: false },
@@ -47,6 +47,11 @@ export default class Generala {
     ]
 
     this.status.throws = 0
+    this.resetAvailableGames()
+  }
+
+  newGame() {
+    this.resetBoard()
 
     this.status.score = {
       1: 0,
@@ -61,8 +66,6 @@ export default class Generala {
       generala: 0,
       generala2: 0
     }
-
-    this.resetAvailableGames()
   }
 
   getBoard() {
@@ -152,6 +155,6 @@ export default class Generala {
 
   putScore(key) {
     this.status.score[key] = this.status.availableGames[key]
-    this.resetAvailableGames()
+    this.resetBoard()
   }
 }

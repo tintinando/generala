@@ -32,7 +32,7 @@ function DicesContainer({
   return (
     <div className='container'>
       <div className='dices-container'>
-        {gameStatus.throws > 0 &&
+        {gameStatus.throws > 0 ? (
           gameStatus.board.map((e, index) => (
             <Dice
               key={index}
@@ -43,7 +43,10 @@ function DicesContainer({
               freeze={e.freeze}
               setDicesThrow={setDicesThrow}
             />
-          ))}
+          ))
+        ) : (
+          <h3>Pulse &quot;Repartir&quot;</h3>
+        )}
       </div>
       <div>
         <button

@@ -3,7 +3,6 @@ import { PropTypes } from 'prop-types'
 function StatusGame({ gameStatus }) {
   return (
     <div className='container'>
-      <p>Tiros totales: {gameStatus.throws}</p>
       <table>
         <thead>
           <tr>

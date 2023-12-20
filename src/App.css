@@ -6,8 +6,8 @@ body {
 }
 
 nav {
-  padding: 5px 20px 5px;
-  height: 50px;
+  padding: 0 20px 5px;
+  height: 35px;
   background-color: cornflowerblue;
   display: flex;
   flex-direction: row;
@@ -29,7 +29,7 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .game-container {
@@ -62,4 +62,15 @@ table {
   max-width: 250px;
   font-size: 0.8rem;
   line-height: 0.8rem;
+}
+
+.table-available tr:first-child {
+  height: 30px;
+  font-size: 1rem;
+}
+
+.table-available button {
+  width: 50px;
+  padding: 0;
+  height: 1.5rem;
 }

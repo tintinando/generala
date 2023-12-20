@@ -19,12 +19,12 @@ function App() {
             mixDices={mixDices}
             newGame={newGame}
             freezeDice={freezeDice}
-            putScore={putScore}
             gameStatus={gameStatus}
             setDicesThrow={setDicesThrow}
           />
           <AvailableGames
             gameStatus={gameStatus}
+            putScore={putScore}
             dicesThrow={dicesThrow}
           />
         </div>
