@@ -1,0 +1,6 @@
+export { default as dice1} from './dice-1.svg'
+export { default as dice2} from './dice-2.svg'
+export { default as dice3} from './dice-3.svg'
+export { default as dice4} from './dice-4.svg'
+export { default as dice5} from './dice-5.svg'
+export { default as dice6} from './dice-6.svg'

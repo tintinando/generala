@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+
+nav {
+  padding: 5px 20px 5px;
+  height: 50px;
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: row;
+}
+
+nav span {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+button {
+  width: 150px;
+}
+
+table {
+  max-width: 800px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.dices-container {
+  height: 80px;
+  padding: 5px 20px;
+  margin-bottom: 3rem;
+}
+
+.dices-container img {
+  height: 100%;
+}
+
+.dices-container + div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.freeze {
+  transform: rotate(0) scale(1.2) translateY(-20px);
+}
+
+.table-available {
+  max-width: 250px;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+}
