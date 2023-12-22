@@ -22,6 +22,7 @@ function App() {
             freezeDice={freezeDice}
             gameStatus={gameStatus}
             fullScore={fullScore}
+            setFullScore={setFullScore}
             setDicesThrow={setDicesThrow}
           />
           <AvailableGames

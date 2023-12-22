@@ -8,7 +8,8 @@ function DicesContainer({
   freezeDice,
   gameStatus,
   setDicesThrow,
-  fullScore
+  fullScore,
+  setFullScore
 }) {
   const [shuffle, setShuffle] = useState(false)
 
@@ -18,6 +19,7 @@ function DicesContainer({
   }
 
   const handleNewGame = () => {
+    setFullScore(false)
     setShuffle((prev) => !prev)
     newGame()
   }
@@ -69,7 +71,8 @@ DicesContainer.propTypes = {
   putScore: PropTypes.func,
   gameStatus: PropTypes.object,
   setDicesThrow: PropTypes.func,
-  fullScore: PropTypes.bool
+  fullScore: PropTypes.bool,
+  setFullScore: PropTypes.func
 }
 
 export default DicesContainer
