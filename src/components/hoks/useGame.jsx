@@ -27,8 +27,8 @@ function useGame() {
     setStateFromLogic()
   }
 
-  const putScore = (key) => {
-    game.current.putScore(key)
+  const putScore = (key, cancel) => {
+    game.current.putScore(key, cancel)
     setStateFromLogic()
   }
 

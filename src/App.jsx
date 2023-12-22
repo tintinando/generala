@@ -9,6 +9,7 @@ import useGame from './components/hoks/useGame'
 function App() {
   const { mixDices, newGame, freezeDice, putScore, gameStatus } = useGame()
   const [dicesThrow, setDicesThrow] = useState(false)
+  const [fullScore, setFullScore] = useState(false)
 
   return (
     <>
@@ -20,15 +21,20 @@ function App() {
             newGame={newGame}
             freezeDice={freezeDice}
             gameStatus={gameStatus}
+            fullScore={fullScore}
             setDicesThrow={setDicesThrow}
           />
           <AvailableGames
             gameStatus={gameStatus}
             putScore={putScore}
             dicesThrow={dicesThrow}
+            setDicesThrow={setDicesThrow}
           />
         </div>
-        <StatusGame gameStatus={gameStatus} />
+        <StatusGame
+          gameStatus={gameStatus}
+          setFullScore={setFullScore}
+        />
       </div>
     </>
   )

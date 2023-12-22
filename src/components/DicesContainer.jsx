@@ -7,7 +7,8 @@ function DicesContainer({
   newGame,
   freezeDice,
   gameStatus,
-  setDicesThrow
+  setDicesThrow,
+  fullScore
 }) {
   const [shuffle, setShuffle] = useState(false)
 
@@ -51,7 +52,7 @@ function DicesContainer({
       <div>
         <button
           onClick={handleShuffle}
-          disabled={gameStatus.throws >= 3}
+          disabled={gameStatus.throws >= 3 || fullScore}
         >
           Repartir
         </button>
@@ -67,7 +68,8 @@ DicesContainer.propTypes = {
   freezeDice: PropTypes.func,
   putScore: PropTypes.func,
   gameStatus: PropTypes.object,
-  setDicesThrow: PropTypes.func
+  setDicesThrow: PropTypes.func,
+  fullScore: PropTypes.bool
 }
 
 export default DicesContainer

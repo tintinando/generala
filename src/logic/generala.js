@@ -153,8 +153,12 @@ export default class Generala {
     }()
   }
 
-  putScore(key) {
-    this.status.score[key] = this.status.availableGames[key]
+  putScore(key, cancel = false) {
+    if (cancel) {
+      this.status.score[key] = 'n'
+    } else {
+      this.status.score[key] = this.status.availableGames[key]
+    }
     this.resetBoard()
   }
 }

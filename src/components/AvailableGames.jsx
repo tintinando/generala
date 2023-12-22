@@ -1,12 +1,22 @@
 import PropTypes from 'prop-types'
 
-function AvailableGames({ gameStatus, dicesThrow, putScore }) {
+function AvailableGames({ gameStatus, dicesThrow, setDicesThrow, putScore }) {
   const available = Object.keys(gameStatus.availableGames).filter((key) => {
     return gameStatus.score[key] === 0 && gameStatus.availableGames[key] !== 0
   })
 
+  const cancellable = Object.keys(gameStatus.availableGames).filter((key) => {
+    return gameStatus.score[key] === 0 && gameStatus.availableGames[key] === 0
+  })
+
   const handleSelectGame = (key) => {
     putScore(key)
+    setDicesThrow(false)
+  }
+
+  const handleCancelGame = (key) => {
+    putScore(key, true)
+    setDicesThrow(false)
   }
 
   return (
@@ -25,15 +35,29 @@ function AvailableGames({ gameStatus, dicesThrow, putScore }) {
         </thead>
         <tbody>
           {dicesThrow &&
-            available.map((key) => (
-              <tr key={key}>
-                <td>{key}</td>
-                <td>{gameStatus.availableGames[key]}</td>
-                <td>
-                  <button onClick={() => handleSelectGame(key)}>Anotar</button>
-                </td>
-              </tr>
-            ))}
+            (available.length > 0
+              ? available.map((key) => (
+                  <tr key={key}>
+                    <td>{key}</td>
+                    <td>{gameStatus.availableGames[key]}</td>
+                    <td>
+                      <button onClick={() => handleSelectGame(key)}>
+                        Anotar
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              : cancellable.map((key) => (
+                  <tr key={key}>
+                    <td>{key}</td>
+                    <td>{gameStatus.availableGames[key]}</td>
+                    <td>
+                      <button onClick={() => handleCancelGame(key)}>
+                        Tachar
+                      </button>
+                    </td>
+                  </tr>
+                )))}
         </tbody>
       </table>
     </div>
@@ -43,6 +67,7 @@ function AvailableGames({ gameStatus, dicesThrow, putScore }) {
 AvailableGames.propTypes = {
   gameStatus: PropTypes.object,
   dicesThrow: PropTypes.bool,
+  setDicesThrow: PropTypes.func,
   putScore: PropTypes.func
 }
 
