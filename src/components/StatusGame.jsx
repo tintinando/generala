@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 
 function StatusGame({ gameStatus, setFullScore }) {
-  const [modalOpen, setModalOpen] = useState()
+  const [modalOpen, setModalOpen] = useState(true)
 
   const closeModal = () => {
     setModalOpen(false)
@@ -21,7 +21,8 @@ function StatusGame({ gameStatus, setFullScore }) {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      backgroundColor: '#333'
+      backgroundColor: '#3a4be2',
+      color: '#ccc'
     }
   }
 
