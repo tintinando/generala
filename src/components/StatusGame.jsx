@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 
 function StatusGame({ gameStatus, setFullScore }) {
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const closeModal = () => {
     setModalOpen(false)
