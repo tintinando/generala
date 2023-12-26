@@ -48,13 +48,13 @@ function StatusGame({ gameStatus, setFullScore }) {
         style={modalStyle}
         appElement={document.getElementById('app')}
       >
-        <div className='container'>
-          <p>Se completó la tabla</p>
-          <p>Total de puntos: {totalScore}</p>
-          <p>Puntuación máxima: 350</p>
-          <p>Rendimiento {Math.floor((totalScore * 100) / 35) / 10}</p>
+        <ul className='container'>
+          <li>Se completó la tabla</li>
+          <li>Total de puntos: {totalScore}</li>
+          <li>Puntuación máxima: 350</li>
+          <li>Rendimiento {`${Math.floor((totalScore * 100) / 35) / 10} %`}</li>
           <button onClick={closeModal}>Cerrar</button>
-        </div>
+        </ul>
       </Modal>
 
       <div className='container'>
