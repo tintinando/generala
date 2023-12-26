@@ -5,7 +5,7 @@ Este repositorio contiene una aplicación web con el juego de dados Generala [wi
 Realizado con Vite React JS + SWC
 
 ### Vista previa:
-https://6583216244a5bc3b87b4e935--fancy-dolphin-c758ca.netlify.app/
+https://fancy-dolphin-c758ca.netlify.app/
 
 ## Características
 ### Usuario final
