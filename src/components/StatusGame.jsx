@@ -3,13 +3,13 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Modal from 'react-modal'
 
-function StatusGame({ gameStatus, setFullScore, setDicesThrow }) {
+function StatusGame({ gameStatus, setFullScore, newGame }) {
   const [modalOpen, setModalOpen] = useState(false)
   const [totalScore, setTotalScore] = useState(0)
 
   const closeModal = () => {
     setModalOpen(false)
-    setDicesThrow(false)
+    newGame()
   }
 
   const modalStyle = {
@@ -89,7 +89,7 @@ function StatusGame({ gameStatus, setFullScore, setDicesThrow }) {
 StatusGame.propTypes = {
   gameStatus: PropTypes.object,
   setFullScore: PropTypes.func,
-  setDicesThrow: PropTypes.func
+  newGame: PropTypes.func
 }
 
 export default StatusGame
