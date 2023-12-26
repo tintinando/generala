@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 
 function StatusGame({ gameStatus, setFullScore }) {
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
   const [totalScore, setTotalScore] = useState(0)
 
   const closeModal = () => {
@@ -34,7 +34,10 @@ function StatusGame({ gameStatus, setFullScore }) {
     }
 
     const suma = Object.values(gameStatus.score).reduce(
-      (total, valor) => total + valor,
+      (total, valor) => {
+        if(typeof valor === 'number') return total + valor
+        return total
+      },
       0
     )
     setTotalScore(suma)
