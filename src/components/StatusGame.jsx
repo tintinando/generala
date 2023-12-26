@@ -3,12 +3,13 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Modal from 'react-modal'
 
-function StatusGame({ gameStatus, setFullScore }) {
+function StatusGame({ gameStatus, setFullScore, setDicesThrow }) {
   const [modalOpen, setModalOpen] = useState(false)
   const [totalScore, setTotalScore] = useState(0)
 
   const closeModal = () => {
     setModalOpen(false)
+    setDicesThrow(false)
   }
 
   const modalStyle = {
@@ -53,8 +54,8 @@ function StatusGame({ gameStatus, setFullScore }) {
           <li>Total de puntos: {totalScore}</li>
           <li>Puntuación máxima: 350</li>
           <li>Rendimiento {`${Math.floor((totalScore * 100) / 35) / 10} %`}</li>
-          <button onClick={closeModal}>Cerrar</button>
         </ul>
+        <button onClick={closeModal}>Cerrar</button>
       </Modal>
 
       <div className='container'>
@@ -87,7 +88,8 @@ function StatusGame({ gameStatus, setFullScore }) {
 
 StatusGame.propTypes = {
   gameStatus: PropTypes.object,
-  setFullScore: PropTypes.func
+  setFullScore: PropTypes.func,
+  setDicesThrow: PropTypes.func
 }
 
 export default StatusGame

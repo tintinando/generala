@@ -35,6 +35,7 @@ function App() {
         <StatusGame
           gameStatus={gameStatus}
           setFullScore={setFullScore}
+          setDicesThrow={setDicesThrow}
         />
       </div>
     </>
