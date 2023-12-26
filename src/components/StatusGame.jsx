@@ -33,13 +33,10 @@ function StatusGame({ gameStatus, setFullScore }) {
       setModalOpen(true)
     }
 
-    const suma = Object.values(gameStatus.score).reduce(
-      (total, valor) => {
-        if(typeof valor === 'number') return total + valor
-        return total
-      },
-      0
-    )
+    const suma = Object.values(gameStatus.score).reduce((total, valor) => {
+      if (typeof valor === 'number') return total + valor
+      return total
+    }, 0)
     setTotalScore(suma)
   }, [gameStatus, setFullScore])
 
@@ -53,7 +50,9 @@ function StatusGame({ gameStatus, setFullScore }) {
       >
         <div className='container'>
           <p>Se completó la tabla</p>
-          <span>Total de puntos: {totalScore}</span>
+          <p>Total de puntos: {totalScore}</p>
+          <p>Puntuación máxima: 350</p>
+          <p>Rendimiento {Math.floor((totalScore * 100) / 35) / 10}</p>
           <button onClick={closeModal}>Cerrar</button>
         </div>
       </Modal>
