@@ -21,6 +21,7 @@ function DicesContainer({
   const handleNewGame = () => {
     setFullScore(false)
     setShuffle((prev) => !prev)
+    setDicesThrow(false)
     newGame()
   }
 

@@ -21,6 +21,7 @@ nav span {
 button {
   width: 100px;
   padding: 0.5rem;
+  user-select: none;
 }
 
 table {
