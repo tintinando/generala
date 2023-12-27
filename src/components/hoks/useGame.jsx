@@ -1,9 +1,14 @@
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import Generala from '../../logic/generala'
+import useLocalStorage from './useLocalStorage'
 
 function useGame() {
   const game = useRef(new Generala())
-  const [gameStatus, setGameStatus] = useState(game.current.getStatus())
+  const [gameStatus, setGameStatus] = useLocalStorage(
+    'gameStatus',
+    game.current.getStatus(),
+    600
+  )
 
   const setStateFromLogic = () => {
     const logicStatus = game.current.getStatus()
